@@ -1,0 +1,65 @@
+/* Full-page background and layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    /* Background image reference (static folder) */
+    background: url("/static/images/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Centered content block with overlay */
+.hero {
+    background-color: rgba(0, 0, 0, 0.6); /* dark transparent overlay */
+    padding: 50px;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 90%;
+}
+
+/* Header text */
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+/* Subheading text */
+p {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Inspirational quote */
+blockquote {
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 30px 0;
+    color: #f0f0f0;
+}
+
+/* Button style */
+.btn {
+    padding: 15px 30px;
+    background-color: #00bfff;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #009acd;
+}

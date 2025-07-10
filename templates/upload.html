@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Fabric Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+
+            /* ✅ Add background image via Flask static path */
+            background: url('{{ url_for("static", filename="images/background.jpg") }}') no-repeat center center fixed;
+            background-size: cover;
+
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 50px;
+            border-radius: 12px;
+            max-width: 700px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            background: white;
+            color: black;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background-color: #00bfff;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #009acd;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Upload Fabric Image</h1>
+        <p>Please choose a fabric image to analyze its pattern.</p>
+
+        <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required><br>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
